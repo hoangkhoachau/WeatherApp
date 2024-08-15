@@ -8,6 +8,7 @@
 import Foundation
 
 struct WeatherLocal {
+    // Checks for application current language
     static var language: String {
         (Locale.current.language.languageCode!.identifier) == "ar" ? "ar" : "en"
     }
