@@ -12,7 +12,7 @@ struct CityAPI {
     static func fetchCity(for name: String) -> AnyPublisher<[City], Error> {
         let cityName = name.capitalized.replacingOccurrences(of: " ", with: "-")
         
-        guard let url = URL(string: "http://api.openweathermap.org/geo/1.0/direct?q=\(cityName)&limit=1&appid=\(API.key)") else {
+        guard let url = URL(string: "https://api.openweathermap.org/geo/1.0/direct?q=\(cityName)&limit=1&appid=\(API.key)") else {
             print("DEBUG: Invalid weather URL,")
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
